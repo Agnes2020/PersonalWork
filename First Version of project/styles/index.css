@@ -1,0 +1,214 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 2px 3px 12px 2px;
+          box-shadow: 2px 3px 12px 2px;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  padding: 0;
+  color: #ff5f05;
+}
+
+.header .first {
+  margin-left: 50%;
+  color: #ff5f05;
+}
+
+.header .second {
+  margin-left: 5rem;
+  color: #ff5f05;
+}
+
+.header .third {
+  margin-left: 5rem;
+  color: #ff5f05;
+}
+
+.header .fourth {
+  margin-left: 5rem;
+  color: #ff5f05;
+}
+
+.slider {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+.handyMen {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.handyMen h1 {
+  text-align: center;
+  padding: 1rem;
+  margin: 0 35% 2rem 35%;
+  -webkit-box-shadow: 2px 3px 12px 2px;
+          box-shadow: 2px 3px 12px 2px;
+  border-radius: 0.4rem;
+}
+
+.handyMen .row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.handyMen .row1 .handyMargin {
+  margin: 2rem;
+}
+
+.handyMen .row1 .handyMargin p {
+  font-family: Fjord;
+  color: #ff5f05;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+  width: 30%;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.handyMen .row1 .handy1 {
+  background-image: url(../assets/DesignPics/painter.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 0.4rem;
+}
+
+.handyMen .row1 .handy2 {
+  background-image: url(../assets/DesignPics/interior.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 0.4rem;
+}
+
+.handyMen .row1 .handy3 {
+  background-image: url(../assets/DesignPics/plumber.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 0.4rem;
+}
+
+.handyMen .row2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.handyMen .row2 .handyMargin {
+  margin: 2rem;
+}
+
+.handyMen .row2 .handyMargin p {
+  font-family: Fjord;
+  color: #ff5f05;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+  width: 30%;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.handyMen .row2 .handy1 {
+  background-image: url(../assets/DesignPics/electrician.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 0.4rem;
+}
+
+.handyMen .row2 .handy2 {
+  background-image: url(../assets/DesignPics/carpenter.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 0.4rem;
+}
+
+.footer {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.footer .footer-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .footer-contents p {
+  color: white;
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+}
+
+.footer .footer-contents ul {
+  color: white;
+  margin-left: 50%;
+  -webkit-box-flex: 60%;
+      -ms-flex: 60%;
+          flex: 60%;
+  float: right;
+  list-style: none;
+}
+
+.footer .footer-contents ul li {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.footer .footer-contents ul li:hover {
+  font-weight: 900;
+}
+.dropbtn {
+  background-color: white;
+  color:  #ff5f05;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: white;}
+/*# sourceMappingURL=index.css.map */

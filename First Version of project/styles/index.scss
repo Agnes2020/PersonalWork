@@ -1,0 +1,167 @@
+.header {
+  display: flex;
+  // border-bottom: 1px rgb(54, 53, 53) solid;
+  box-shadow: 2px 3px 12px 2px;
+  margin-bottom: 1rem;
+  h1 {
+    padding: 0;
+    color: #ff5f05;
+  }
+  .first {
+    margin-left: 50%;
+    // flex: 20%;
+    color: #ff5f05;
+  }
+
+  .second {
+    margin-left: 5rem;
+    // flex: 20%;
+    color: #ff5f05;
+  }
+
+  .third {
+    margin-left: 5rem;
+    // flex: 20%;
+    color: #ff5f05;
+  }
+  .fourth {
+    margin-left: 5rem;
+    // flex: 20%;
+    color: #ff5f05;
+  }
+}
+
+.slider {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+.handyMen {
+  margin-top: 2rem;
+  text-align: center;
+  h1 {
+    // width: 20%;
+    text-align: center;
+    padding: 1rem;
+    // border: 1px red solid;
+    margin: 0 35% 2rem 35%;
+    box-shadow: 2px 3px 12px 2px;
+    border-radius: 0.4rem;
+  }
+  .row1 {
+    display: flex;
+    .handyMargin {
+      margin: 2rem;
+      p{
+        font-family: Fjord;
+        color: #ff5f05;
+        text-align: left;
+        background-color:rgba(0, 0, 0, 0.5);
+        margin-top: 0;
+        width: 30%;
+        padding: 0.5rem;
+        font-size: 1.3rem;
+
+      }
+    }
+
+    .handy1 {
+      background-image: url(../assets/DesignPics/painter.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 0.4rem;
+    }
+    .handy2 {
+      background-image: url(../assets/DesignPics/interior.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 0.4rem;
+    }
+    .handy3 {
+      background-image: url(../assets/DesignPics/plumber.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 0.4rem;
+    }
+  }
+
+  .row2 {
+    display: flex;
+    .handyMargin {
+      margin: 2rem;
+      p{
+        font-family: Fjord;
+        color: #ff5f05;
+        text-align: left;
+        background-color:rgba(0, 0, 0, 0.5);
+        margin-top: 0;
+        width: 30%;
+        padding: 0.5rem;
+        font-size: 1.3rem;
+
+      }
+    }
+
+    .handy1 {
+      background-image: url(../assets/DesignPics/electrician.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 0.4rem;
+    }
+    .handy2 {
+      background-image: url(../assets/DesignPics/carpenter.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 0.4rem;
+    }
+    .handy3 {
+      background-image: url(../assets/DesignPics/mechanic.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 0.4rem;
+    }
+
+  }
+}
+
+.footer{
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  .footer-contents{
+    display: flex;
+    p{
+      color: white;
+      flex: 40%;
+    }
+    ul{
+      color: white;
+      margin-left: 50%;
+      flex: 60%;
+      float: right;
+      list-style: none;
+
+      li{
+        margin: 1rem 0;
+        cursor: pointer;
+      }
+      li:hover{
+        font-weight: 900;
+      }
+    }
+  }
+}
