@@ -1,86 +1,88 @@
 #!/bin/bash
 
-addToRecord()
+saveContact()
 {
 	echo
 	while true
 	do
-		echo "To add a record to your address book, please enter the information in this"
-		echo "format: \"Last name,first name,email url,phone number\" (no quotes or spaces)."
-		echo "Example: Doe,John,johndoe@gmail.com,6501234567"
-		echo "If you'd like to quit, enter 'q'."
-		read aInput
-		if [ "$aInput" == 'q' ]
+		echo "Add a new contact to your address book". 
+		echo "format: \"Surname,First Name,Email,Phone Number\" (separate with comma)."
+		echo "Example: Snow,John,johnsnow@got.com,0501234567"
+		echo "Press 'Q' or 'q' to quit."
+		read newContact
+		if [ "$newContact" == 'Q' ] || [ "$newContact" == 'q' ]
 			then
 			break
 		fi
 		echo
-		echo $aInput >> addressbook.csv
-		echo "The entry was added to your address book."
+		echo $newContact >> addressbook.csv
+		echo "New contact created successfully."
 		echo
 	done
 }
 
-displayRecord()
+viewContact()
 {
 	echo
 	while true
 	do
-		echo "To display a record, enter the last name of the person (case sensitive)."
-		echo "If you'd like to quit, enter 'q'."
-		read dInput
-		if [ "$dInput" == 'q' ]
+		echo "View Contact"
+		echo "Enter surname. (case sensitive)."
+		echo "Press 'Q' or 'q' to quit."
+		read viewContact
+		if [ "$viewContact" == 'Q' ] || ["$viewContact" == 'q' ]
 			then
 			break
 		fi
 		echo
-		echo "Listing records for \"$dInput\":"
-		grep ^"$dInput" addressbook.csv   # searching the lines by last name (the first field in the record)
+		echo "Contact Details for \"$viewContact\":"
+		grep ^"$viewContact" addressbook.csv   
 		RETURNSTATUS=`echo $?`
 		if [ $RETURNSTATUS -eq 1 ]
 			then
-			echo "No records found with last name of \"$dInput\"."
+			echo "No contact with surname:  \"$viewContact\" found."
 		fi
 		echo
 	done
 }
 
-editRecord()
+editContact()
 {
 	echo
 	while true
 	do
-		echo "To edit a record, enter any search string, e.g. last name or email address (case sensitive)."
-		echo "If you're done editing your address book, enter 'q' to quit."
-		read eInput
-		if [ "$eInput" == 'q' ]
+		echo "Edit Contact"
+		echo "Enter last name or email address. (case sensitive)."
+		echo "Press 'Q' or 'q' to quit when you are done"
+		read editContact
+		if [ "$editContact" == 'Q' ] || ["$editContact" == 'q' ]
 			then
 			break
 		fi
 		echo
-		echo "Listing records for \"$eInput\":"
-		grep -n "$eInput" addressbook.csv
+		echo "Contact Details for \"$editContact\":"
+		grep -n "$editContact" addressbook.csv
 		RETURNSTATUS=`echo $?`
 		if [ $RETURNSTATUS -eq 1 ]
 			then
-			echo "No records found for \"$eInput\""
+			echo "No contact with surname:  \"$viewContact\" found."
 		else
 			echo
-			echo "Enter the line number (the first number of the entry) that you'd like to edit."
-			read lineNumber
+			echo "Enter the line number (the first number of the entry) that you wamt to edit."
+			read lineNum
 			echo
-			for line in `grep -n "$eInput" addressbook.csv`
+			for line in `grep -n "$editContact" addressbook.csv`
 			do
 				number=`echo "$line" | cut -c1`
-				if [ $number -eq $lineNumber ]
+				if [ $number -eq $lineNum ]
 					then
-					echo "What would you like to change it to? Use the format:"
-					echo "\"Last name,first name,email url,phone number\" (no quotes or spaces)."
+					echo "Update Contact Details:"
+					echo "\"Surname,First name,Email,Phone number\"."
 					read edit
-					lineChange="${lineNumber}s"
+					lineChange="${lineNum}s"
 					sed -i -e "$lineChange/.*/$edit/" addressbook.csv
 					echo
-					echo "The change has been made."
+					echo \"$viewContact\" details edited successfully."
 				fi
 			done
 		fi
@@ -88,7 +90,7 @@ editRecord()
 	done		
 }
 
-removeRecord()
+deleteContact()
 {
 	echo 
 	while true
