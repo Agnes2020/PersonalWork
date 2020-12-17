@@ -95,32 +95,33 @@ deleteContact()
 	echo 
 	while true
 	do
-		echo "To remove a record, enter any search string, e.g. last name or email address (case sensitive)."
-		echo "If you're done, enter 'q' to quit."
-		read rInput
-		if [ "$rInput" == 'q' ]
+		echo "Delete Contact"
+		echo "Enter surname or email address (case sensitive)."
+		echo "Press 'Q' or 'q' to quit when you are done"
+		read deleteContact
+		if [ "$deleteContact" == 'q' ]
 			then
 			break
 		fi
 		echo
-		echo "Listing records for \"$rInput\":"
-		grep -n "$rInput" addressbook.csv
+		echo "Contact Details for \"$deleteContact\":"
+		grep -n "$deleteContact" addressbook.csv
 		RETURNSTATUS=`echo $?`
 		if [ $RETURNSTATUS -eq 1 ]
 			then
-			echo "No records found for \"$rInput\""
+			echo "No records found for \"$deleteContact\""
 		else
 			echo
 			echo "Enter the line number (the first number of the entry) of the record you want to remove."
-			read lineNumber
-			for line in `grep -n "$rInput" addressbook.csv`
+			read lineNum
+			for line in `grep -n "$deleteContact" addressbook.csv`
 			do
 				number=`echo "$line" | cut -c1`
-				if [ $number -eq $lineNumber ]
+				if [ $number -eq $lineNum ]
 					then
-					lineRemove="${lineNumber}d"
+					lineRemove="${lineNum}d"
 					sed -i -e "$lineRemove" addressbook.csv
-					echo "The record was removed from the address book."
+					echo "Contact deleted successfully."
 				fi
 			done
 		fi
@@ -128,27 +129,26 @@ deleteContact()
 	done
 }
 
-searchRecord()
+searchContact()
 {
 	echo
 	while true
 	do
-		echo "To search for a record, enter any search string, e.g. last name or email address (case sensitive)."
-		echo "The format of a record is \"Last name,firstname,email address,phone number\"."
-		echo "Example: Doe,John,johndoe@gmail.com,6501234567"
-		echo "If you'd like to quit, enter 'q'."
-		read sInput
-		if [ "$sInput" == 'q' ]
+		echo "Search Contact"
+		echo "Enter surname or email address (case sensitive)."
+		echo "Press 'Q' or 'q' to quit when you are done"
+		read searchContact
+		if [ "$searchContact" == 'Q' ] || [ "$searchContact" == 'q' ]
 			then
 			break
 		fi
 		echo
-		echo "Listing records for \"$sInput\":"
-		grep "$sInput" addressbook.csv
+		echo "Contact Details \"$searchContact\":"
+		grep "$searchContact" addressbook.csv
 		RETURNSTATUS=`echo $?`
 		if [ $RETURNSTATUS -eq 1 ]
 			then
-			echo "No records found for \"$sInput\"."
+			echo "No contact with details:  \"$searchContact\" found."
 		fi
 		echo
 	done
@@ -156,34 +156,32 @@ searchRecord()
 
 
 echo
-lastCharOfFile=`tail -c 1 addressbook.csv` # checking to make sure the .csv file ends with newline character
+lastCharOfFile=`tail -c 1 addressbook.csv` 
 if [ -n "$lastCharOfFile" ]
 	then
 	echo >> addressbook.csv
 fi
-echo "Hello, what would you like to do with your address book?"
+echo "Agnes Address Book"
 echo "Please enter one of the following letters:"
-echo "a) to add a record"
-echo "d) to display 1 or more records"
-echo "e) to edit a record"
-echo "r) to remove a single record"
-echo "s) to search for records"
+echo "1) Create Contact"
+echo "2) View 1 or more records"
+echo "3) Edit Contact"
+echo "4) Delete Contact"
+echo "5) Search Contact"
 echo
-read input
+read selection
 
-case $input in
-	a) addToRecord;;
-	d) displayRecord;;
-	e) editRecord;;
-	r) removeRecord;;
-	s) searchRecord;;
+case $selection in
+	1) createContact;;
+	2) viewContact;;
+	3) editContact;;
+	4) deleteContact;;
+	5) searchContact;;
 esac
 
 echo
-# HERE doc
 cat <<EOF   
-Any changes you made have been saved.
-Have a nice day!
+:)!
 EOF
 echo
 
